@@ -2,8 +2,8 @@
   "name": "LLM Auditor Agent",
   "description": "The LLM Auditor evaluates LLM-generated answers, verifies actual accuracy using the web, and refines the response to ensure alignment with real-world knowledge.",
   "tags": ["Python", "ADK", "LLM", "Generative AI", "Agent"],
-  "icon": "icon.svg",
-  "postCreate": "bash ./.firebase-studio/post-create.sh",
+  "icon": "python/agents/llm-auditor/.firebase-studio/icon.svg",
+  "postCreate": "bash ./python/agents/llm-auditor/.firebase-studio/post-create.sh",
   "deployment": {
     "title": "Deploying the LLM Auditor",
     "description": "The deployment directory contains instructions and scripts for deploying the agent to Google Cloud. See the README in that directory for more details.",
