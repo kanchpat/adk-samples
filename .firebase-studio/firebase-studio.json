@@ -1,0 +1,5 @@
+{
+  "name": "Root Template Test",
+  "description": "A temporary template to diagnose the 404 issue.",
+  "postCreate": "bash ./.firebase-studio/post-create.sh"
+}
