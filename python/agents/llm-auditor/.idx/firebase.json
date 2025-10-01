@@ -7,6 +7,6 @@
   "deployment": {
     "title": "Deploying the LLM Auditor",
     "description": "The deployment directory contains instructions and scripts for deploying the agent to Google Cloud. See the README in that directory for more details.",
-    "documentationUrl": "https://github.com/kanchpat/adk-samples/blob/main/python/agents/llm-auditor/deployment/README.md"
+    "documentationUrl": "https://github.com/kanchpat/adk-samples/blob/template-test/python/agents/llm-auditor/deployment/README.md"
   }
 }
