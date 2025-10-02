@@ -1,38 +1,17 @@
-{ pkgs, ... }: {
-  # Which nixpkgs channel to use.
-  channel = "stable-23.11";
+{ pkgs, template, ... }:
+let
+  repoRoot = template.git.root;
+in
+pkgs.stdenv.mkDerivation {
+  name = "llm-auditor-template-bootstrap";
+  buildCommand = ''
+    # Copy only the contents of the 'llm-auditor' agent into the $out directory (the new workspace root)
+    cp -R ${repoRoot}/python/agents/llm-auditor/. $out/
 
-  # Use https://search.nixos.org/packages to find packages
-  packages = [
-    pkgs.python310
-    pkgs.poetry
-    pkgs.google-cloud-sdk
-  ];
+    # Ensure the .idx directory is created for the dev.nix file
+    mkdir -p $out/.idx
 
-  # The IDX workspace configuration
-  workspace = {
-    # A list of extension IDs that are recommended for the workspace.
-    # See https://open-vsx.org/ for a list of available extensions.
-    extensions = [
-      "ms-python.python"
-      "ms-python.vscode-pylance"
-    ];
-
-    # Scripts to run on workspace startup
-    startup = {
-      # This script runs in the background
-      background = ''
-        echo "Starting background processes..."
-      '';
-      # This script runs in the foreground
-      foreground = ''
-        echo "Setting up the environment..."
-        poetry config virtualenvs.in-project true
-        poetry install
-      '';
-    };
-  };
-
-  # The IDX editor configuration
-  idx = {};
+    # Copy the workspace configuration file
+    cp ${repoRoot}/.idx/dev.nix $out/.idx/
+  '';
 }
