@@ -1,9 +1,10 @@
 {
   "name": "LLM Auditor Agent",
   "description": "The LLM Auditor evaluates LLM-generated answers, verifies actual accuracy using the web, and refines the response to ensure alignment with real-world knowledge.",
+  "source": "https://github.com/kanchpat/adk-samples/tree/template-test/python/agents/llm-auditor",
   "tags": ["Python", "ADK", "LLM", "Generative AI", "Agent"],
   "icon": "https://storage.googleapis.com/idx-dev-public/agent-builder-icon.svg",
-  "postCreate": "bash ./.idx/post-create.sh",
+  "postCreate": "./.idx/post-create.sh",
   "deployment": {
     "title": "Deploying the LLM Auditor",
     "description": "The deployment directory contains instructions and scripts for deploying the agent to Google Cloud. See the README in that directory for more details.",
